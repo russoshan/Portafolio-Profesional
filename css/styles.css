@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*variables*/
+:root {
+    /* Colores principales - Gris con Morado */
+    --color-sidebar: #3a3a3a;              /* Gris oscuro para sidebar */
+    --color-sidebar-oscuro: #2a2a2a;       /* Gris más oscuro para detalles */
+    --color-texto-blanco: #ffffff;         /* Texto en sidebar */
+    --color-fondo-claro: #ffffff;          /* Fondo blanco principal */
+    --color-texto-principal: #2c2c2c;      /* Texto principal gris oscuro */
+    --color-titulos: #6b4c9a;              /* Morado para títulos */
+    --color-lineas: #6b4c9a;               /* Morado para líneas divisoras */
+    --color-acento: #8b6bb0;               /* Morado claro para acentos */
+    
+    /* Tipografía*/
+    --fuente-principal: 'Quicksand', 'Rounded', 'Arial Rounded MT Bold', sans-serif;
+    
+    /* Tamaños de fuente - SIDEBAR */
+    --tamano-titulo-sidebar: 20px;
+    --tamano-texto-sidebar: 17px;
+    --tamano-subtitulo-sidebar: 18px;
+    
+    /* Tamaños de fuente - CONTENIDO DERECHO */
+    --tamano-nombre: 38px;
+    --tamano-titulo-profesional: 16px;
+    --tamano-titulo-seccion: 16px;
+    --tamano-texto-normal: 15px;
+    --tamano-texto-pequeno: 14px;
+    
+    /* Bordes y detalles */
+    --borde-foto: 5px;                    
+}
+
+/* fuente importada */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: var(--fuente-principal);
+    line-height: 1.6;
+    background-color: #f0f0f0;
+}
+
+/* Grid principal */
+.container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    max-width: 1100px;
+    margin: 30px auto;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+}
+
+/* Columna izquierda - Sidebar */
+.sidebar {
+    background-color: var(--color-sidebar);
+    color: var(--color-texto-blanco);
+    padding: 50px 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Foto de perfil*/
+.profile-photo {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: var(--borde-foto) solid var(--color-acento);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Títulos del sidebar */
+.sidebar-title {
+    font-size: var(--tamano-titulo-sidebar);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-acento);
+    text-align: center;
+}
+
+/* Secciones del sidebar */
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Información de contacto */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-size: var(--tamano-texto-sidebar);
+    line-height: 1.6;
+}
+
+.contact-info p {
+    word-break: break-word;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+/* Estilos para iconos Font Awesome */
+.contact-info i {
+    color: var(--color-acento);
+    font-size: 18px;
+    width: 20px;
+    flex-shrink: 0;
+}
+
+.contact-info a {
+    color: var(--color-texto-blanco);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Referencias*/
+.reference {
+    margin-bottom: 22px;
+    font-size: var(--tamano-texto-sidebar);
+}
+
+.reference:last-child {
+    margin-bottom: 0;
+}
+
+.reference h3 {
+    font-size: var(--tamano-subtitulo-sidebar);
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.reference p {
+    margin-bottom: 4px;
+    opacity: 0.95;
+}
+
+/* Enlaces (LinkedIn, GitHub, Instagram) */
+.website-link {
+    color: var(--color-texto-blanco);
+    text-decoration: none;
+    font-size: var(--tamano-texto-sidebar);
+    word-break: break-all;
+    line-height: 1.6;
+    padding: 8px 0;
+    display: block;
+}
+
+.website-link:hover {
+    text-decoration: underline;
+    color: var(--color-acento);
+}
+
+/* Columna derecha - Contenido principal */
+.main-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--color-fondo-claro);
+}
+
+/* Encabezado - Nombre y título */
+.header {
+    padding-bottom: 15px;
+}
+
+.name {
+    font-size: var(--tamano-nombre);
+    font-weight: 700;
+    color: var(--color-titulos);
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: var(--tamano-titulo-profesional);
+    font-weight: 700;
+    color: var(--color-texto-principal);
+    letter-spacing: 0.5px;
+}
+
+/* Secciones de contenido */
+.content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.section-title {
+    font-size: var(--tamano-titulo-seccion);
+    font-weight: 700;
+    color: var(--color-titulos);
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-lineas);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.section-text {
+    font-size: var(--tamano-texto-normal);
+    line-height: 1.8;
+    color: var(--color-texto-principal);
+    text-align: justify;
+}
+
+/* Timeline para experiencia y educación*/
+.timeline-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-year {
+    font-size: var(--tamano-texto-normal);
+    font-weight: 700;
+    color: var(--color-titulos);
+}
+
+.timeline-content h3 {
+    font-size: var(--tamano-texto-normal);
+    font-weight: 700;
+    color: var(--color-texto-principal);
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.timeline-content p {
+    font-size: var(--tamano-texto-pequeno);
+    line-height: 1.7;
+    color: var(--color-texto-principal);
+    text-align: justify;
+}
+
+/* Habilidades*/
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.skill-item {
+    font-size: var(--tamano-texto-pequeno);
+    color: var(--color-texto-principal);
+    padding: 5px 0;
+}
+
+/* Idiomas*/
+.languages-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+.language-item {
+    font-size: var(--tamano-texto-pequeno);
+    color: var(--color-texto-principal);
+    padding: 5px 0;
+}
+
+/* Proyectos*/
+.project-item {
+    margin-bottom: 18px;
+}
+
+.project-item:last-child {
+    margin-bottom: 0;
+}
+
+.project-item h3 {
+    font-size: var(--tamano-texto-normal);
+    font-weight: 700;
+    color: var(--color-texto-principal);
+    margin-bottom: 5px;
+}
+
+.project-item p {
+    font-size: var(--tamano-texto-pequeno);
+    line-height: 1.7;
+    color: var(--color-texto-principal);
+    text-align: justify;
+}
+
+
+
+
